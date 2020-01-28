@@ -5,7 +5,6 @@ import './App.css';
 import LoginForm from './components/loginform';
 import HeaderExample from './components/header';
 import NavBar from './components/navbar';
-import './interfaces/sql';
 
 const App = () => (
   <Fragment>
