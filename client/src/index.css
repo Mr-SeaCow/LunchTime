@@ -12,7 +12,65 @@ code {
     monospace;
 }
 
-.ui.secondary.NavBar.menu {
+.ui.container.Body {
+  min-width: 950px;
+}
+
+.lunchTime.searchStudents{
+  margin: 10px 0px 20px;
+}
+
+.transactionOrderContainer {
+  margin: 5px 0px;
+}
+.ui.NavBar.menu {
+  font: 3rem;
   margin-top: 5px;
-  padding: 0px 35px;
+  margin-bottom: 20px;
+  padding: 0px 50px;
+  border-radius: 0px;
+}
+
+.studentActionBody {
+  border: none !important;
+  box-shadow: none !important;
+}
+.navbarText {
+  font-size: 1.5rem;
+}
+.navbarButton {
+  font-size: 1.3rem;
+  padding: 0px 15px;
+}
+
+.ui.buttons.sort {
+  display: flex; 
+  justify-content: center;
+  margin: 5px auto;
+  width: 65%;
+  flex-basis: 0;
+}
+.ui.buttons.sort.grade {
+  margin: 20px auto;
+}
+
+.ui.large.compact.button {
+    font-family: "Tahoma", Tahoma, monospace;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.studentTable {
+  min-height: 600px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+
+.column.sort.group {
+  padding-left: auto!important;
+  padding-right: auto!important;
+  display: inline-block;
+  vertical-align: center;
 }

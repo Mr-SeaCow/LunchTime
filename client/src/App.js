@@ -1,16 +1,14 @@
 import React, {Fragment} from 'react';
-import logo from './logo.svg';
 import { Container } from 'semantic-ui-react';
 import './App.css';
-import LoginForm from './components/loginform';
-import HeaderExample from './components/header';
 import NavBar from './components/navbar';
+import LunchTime from './components/lunchTime';
 
 const App = () => (
   <Fragment>
     <NavBar />
-    <Container>
-    <HeaderExample />
+    <Container className="Body">
+      <LunchTime />
     </Container>
   </Fragment>
 

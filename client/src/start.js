@@ -8,8 +8,9 @@ const url = require('url')
 let mainWindow
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 800, height: 600 })
-
+  mainWindow = new BrowserWindow({icon: './public/lunchTime512.png'})
+  mainWindow.maximize();
+  //mainWindow.removeMenu();
   mainWindow.loadURL(
     process.env.ELECTRON_START_URL ||
       url.format({

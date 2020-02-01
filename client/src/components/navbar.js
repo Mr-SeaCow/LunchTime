@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Input, Menu } from 'semantic-ui-react'
+import { Button, Menu, Image } from 'semantic-ui-react'
 
-export default class MenuExampleSecondary extends Component {
-  state = { activeItem: 'home' }
+export default class NavBar extends Component {
+  state = { activeItem: 'Lunch Time' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -10,31 +10,48 @@ export default class MenuExampleSecondary extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu secondary className='NavBar'>
+      <Menu size='massive' inverted className='NavBar'>
+        <Menu.Item header>
+          <Image src='./lunchTime128.png' size='mini' />
+        </Menu.Item>
         <Menu.Item
-          name='home'
-          active={activeItem === 'home'}
+          className='navbarText'
+          name='Lunch Time'
+          active={activeItem === 'Lunch Time'}
           onClick={this.handleItemClick}
         />
         <Menu.Item
-          name='messages'
-          active={activeItem === 'messages'}
+          className='navbarText'
+          name='Students'
+          active={activeItem === 'Students'}
           onClick={this.handleItemClick}
         />
         <Menu.Item
-          name='friends'
-          active={activeItem === 'friends'}
+          className='navbarText'
+          name='Food'
+          active={activeItem === 'Food'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          className='navbarText'
+          name='Transactions'
+          active={activeItem === 'Transactions'}
           onClick={this.handleItemClick}
         />
         <Menu.Menu position='right'>
-          <Menu.Item>
+          {/* <Menu.Item>
             <Input icon='search' placeholder='Search...' />
+          </Menu.Item> */}
+          <Menu.Item>
+            <Button inverted color='blue'>
+              Log In
+            </Button>
           </Menu.Item>
-          <Menu.Item
-            name='logout'
-            active={activeItem === 'logout'}
-            onClick={this.handleItemClick}
-          />
+          <Menu.Item >
+            <Button color='blue'>
+              Sign Up
+            </Button>
+          </Menu.Item>
         </Menu.Menu>
       </Menu>
     )
