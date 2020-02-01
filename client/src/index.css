@@ -22,7 +22,12 @@ code {
 
 .transactionOrderContainer {
   margin: 5px 0px;
+  max-height: 600px;
+  overflow-y: auto;
 }
+
+
+
 .ui.NavBar.menu {
   font: 3rem;
   margin-top: 5px;

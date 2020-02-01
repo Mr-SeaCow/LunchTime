@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tab, Grid } from 'semantic-ui-react'
+import { Tab } from 'semantic-ui-react'
 import LunchTimeBody from './lunchTimePeriod'
 import FoodPurchase from './foodPurchase'
 const panes = [

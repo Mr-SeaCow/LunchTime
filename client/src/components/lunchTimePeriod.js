@@ -4,22 +4,6 @@ import {Loader, Image, Segment, Table, Grid, Button,Input } from 'semantic-ui-re
 import axios from 'axios'
 import TransactionModule from './studentActions'
 const buttonSize = 'large'
-// const tableData1 = [
-//   { StudentID: 1, FirstName: 'Dave', LastName: 'Butz', Grade: 12 },
-//   { StudentID: 2, FirstName: 'Matthew ', LastName: 'Deer', Grade: 11 },
-//   { StudentID: 3, FirstName: 'Matthew', LastName: 'Van Vleet', Grade: 10 },
-//   { StudentID: 4, FirstName: 'Micah', LastName: 'Conner', Grade: 9 },
-//   { StudentID: 5, FirstName: 'Tom', LastName: 'Jerry', Grade: 6 },
-//   { StudentID: 6, FirstName: 'Dave', LastName: 'Dale', Grade: 7 },
-//   { StudentID: 7, FirstName: 'Fred', LastName: 'Jerry', Grade: 6 }
-// ]
-// const tableData2 = [
-//   { StudentID: 1, FirstName: 'Dave', LastName: 'Butz', Grade: 12 },
-//   { StudentID: 2, FirstName: 'Matthew ', LastName: 'Deer', Grade: 11 },
-//   { StudentID: 3, FirstName: 'Matthew', LastName: 'Van Vleet', Grade: 10 },
-//   { StudentID: 6, FirstName: 'Dave', LastName: 'Dale', Grade: 7 },
-//   { StudentID: 7, FirstName: 'Fred', LastName: 'Jerry', Grade: 6 }
-// ]
 
 const grades = { 1: ['1', '2', '3', '4', '5'], 2: ['6', '7', '8', '9', '10', '11', '12'] }
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -38,13 +22,6 @@ export default class TableExampleSortable extends Component {
       open: false,
       studentInfo: null
     }
-    this.getDataStudents(this.state.lunchPeriod).then(data => {
-      this.setState({
-            baseData: data.data.recordset,
-            filteredData: data.data.recordset
-      })
-      this.render();
-    })
   }
 
   handleOpen = (StudentID) => { this.setState({studentInfo: _.filter(this.state.baseData, { 'StudentID': StudentID })[0], open: true})}
@@ -121,10 +98,6 @@ export default class TableExampleSortable extends Component {
         activeFilter: ''
       })
     }
-  }
-
-  studentClick(StudentID) {
-   
   }
 
   refreshState(newLunchPeriod) {
@@ -260,21 +233,6 @@ export default class TableExampleSortable extends Component {
                 onClick={this.swapFirstLast}>Last Name</Button>
             </Button.Group>
 
-            {/* <Button.Group className="sort">
-              <Button compact size={buttonSize} name="1" active={activeFilter === '1'}
-                onClick={this.filterGrade.bind(this)}>1</Button>
-              <Button compact size={buttonSize} name="2" active={activeFilter === '2'}
-                onClick={this.filterGrade.bind(this)}>2</Button>
-              <Button compact size={buttonSize} name="3" active={activeFilter === '3'}
-                onClick={this.filterGrade.bind(this)}>3</Button>
-              <Button compact size={buttonSize} name="4" active={activeFilter === '4'}
-                onClick={this.filterGrade.bind(this)}>4</Button>
-              <Button compact size={buttonSize} name="5" active={activeFilter === '5'}
-                onClick={this.filterGrade.bind(this)}>5</Button>
-              <Button compact size={buttonSize} name="6" active={activeFilter === '6'}
-                onClick={this.filterGrade.bind(this)}>6</Button>
-            </Button.Group> */}
-            
             {letterButtons}
             <TransactionModule open={this.state.open} studentInfo={this.state.studentInfo} handleClose={() => this.handleClose()}/>
           </Grid.Column>
@@ -282,4 +240,5 @@ export default class TableExampleSortable extends Component {
       </Grid>
     )
   }
+
 }
