@@ -40,15 +40,16 @@ class sqlServerInterface {
     }
 
     createStudent(options, callback) {
+        console.log(options)
         this.sqlPoolConnect.then((pool) => {
             pool.request()
                 .input('AccountID', sql.Int, options.accountId)
                 .input('FirstName', sql.NVarChar(50), options.firstName)
                 .input('LastName', sql.NVarChar(50), options.lastName)
                 .input('GradeNumber', sql.VarChar(5), options.gradeNumber)
-                .input('AllowChargingLunch', sql.Bit, options.allowChargingLunch)
-                .input('HotLunchOnly', sql.Bit, options.hotLunchOnly)
-                .input('IsActive', sql.Bit, 1)
+                .input('AllowChargingLunch', sql.Bit, options.allowChargingLunch === '1' ? true : false)
+                .input('HotLunchOnly', sql.Bit, options.hotLunchOnly === '1' ? true : false)
+                .input('IsActive', sql.Bit, true)
                 .input('Allergies', sql.VarChar(100), options.allergies)
                 .input('EmailAddress', sql.VarChar(150), options.emailAddress)
                 .output('StudentID', sql.Int)
@@ -86,7 +87,6 @@ class sqlServerInterface {
         const isActive = options.isActive || 1;
 
         let queryString = sqlQueryStrings.getStudents.default;
-
         if (lunch != null)
             queryString += sqlQueryStrings.getStudents.whereLunch.replace('@InputLunch', lunch);
         else if (grade != null)
