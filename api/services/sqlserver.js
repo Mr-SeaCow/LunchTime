@@ -140,6 +140,15 @@ class sqlServerInterface {
 
         this.sendQuery(queryString, callback);
     }
+
+    getAccounts(callback) {
+        let queryString = sqlQueryStrings.getAccounts.default;
+
+        queryString += ';';
+
+        this.sendQuery(queryString, callback);
+    }
+
     getFood(options, callback) {
         const foodId = options.foodId || null;
         const foodCategory = options.foodCategory || null;

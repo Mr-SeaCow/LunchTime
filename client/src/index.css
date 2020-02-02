@@ -20,6 +20,14 @@ code {
   margin: 10px 0px 20px;
 }
 
+.studentsView.searchStudents{
+  margin: 30px 0px 20px;
+}
+
+.accountView.searchAccounts{
+  margin: 0px 0px 20px;
+}
+
 .transactionOrderContainer {
   margin: 5px 0px;
   max-height: 600px;
@@ -68,6 +76,11 @@ code {
 
 .studentTable {
   min-height: 600px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.accountTable {
   max-height: 600px;
   overflow-y: auto;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Menu, Image } from 'semantic-ui-react'
+import { Button, Menu, Image} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 export default class NavBar extends Component {
   state = { activeItem: 'Lunch Time' }
@@ -15,12 +16,14 @@ export default class NavBar extends Component {
           <Image src='./lunchTime128.png' size='mini' />
         </Menu.Item>
         <Menu.Item
+          as={Link} to='/'
           className='navbarText'
           name='Lunch Time'
           active={activeItem === 'Lunch Time'}
           onClick={this.handleItemClick}
         />
         <Menu.Item
+          as={Link} to='/students'
           className='navbarText'
           name='Students'
           active={activeItem === 'Students'}

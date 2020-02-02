@@ -80,6 +80,18 @@ module.exports.getAccount = {
             WHERE
                A.AccountID = @InputID `
 }
+module.exports.getAccounts = {
+   default: `SELECT 
+               A.AccountID
+               , A.AccountName
+               , A.IsActive
+               , A.AccountBalance
+               , A.EmailAddress
+               , A.CreatedDate
+            FROM 
+               dbo.Account A `
+}
+
 
 module.exports.getFood = {
    default: `SELECT 

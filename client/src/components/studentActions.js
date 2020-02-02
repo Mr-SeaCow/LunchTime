@@ -28,9 +28,6 @@ export default class StudentActionModal extends Component {
     render() {
         const HeaderValue = this.state.studentInfo === null ? 'Loading' :
          `${this.state.studentInfo.LastName}, ${this.state.studentInfo.FirstName}`
-        // if (this.state.studentInfo !== this.props.studentInfo && this.props.studentInfo !== null) {
-        //      this.updateStudentInfo(this.props.studentInfo)
-        // }
         return (
             <Modal
                 open={this.props.open}
