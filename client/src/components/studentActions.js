@@ -1,7 +1,7 @@
 
 
 import React, { Component } from 'react'
-import { Modal, Button, Header, Grid, Tab } from 'semantic-ui-react'
+import { Modal, Button, Header, Tab } from 'semantic-ui-react'
 import FoodPurchase from './foodPurchase'
 
 const panes = [
@@ -12,27 +12,22 @@ const panes = [
 
 
 
-export default class ModalExampleControlled extends Component {
+export default class StudentActionModal extends Component {
 
     state = {
         studentInfo: null
     }
+    componentDidUpdate(prevProps) {
+        if (prevProps.studentInfo !== this.props.studentInfo || this.props.studentInfo !== this.state.studentInfo) {
+            this.setState({studentInfo: this.props.studentInfo})
+        }
+    }
+    
 
-    constructor(props) {
-        super(props)
-    }
-    updateStudentInfo(studentInfo) {
-        this.setState({
-            'studentInfo': studentInfo
-        })
-    }
+
     render() {
-
         const HeaderValue = this.state.studentInfo === null ? 'Loading' :
          `${this.state.studentInfo.LastName}, ${this.state.studentInfo.FirstName}`
-        if (this.state.studentInfo !== this.props.studentInfo && this.props.studentInfo !== null) {
-            this.updateStudentInfo(this.props.studentInfo)
-        }
         return (
             <Modal
                 open={this.props.open}

@@ -36,6 +36,12 @@ router.get('/getAccount', function (req, res, next) {
   })
 });
 
+router.get('/getAccounts', function (req, res, next) {
+  sqlInterface.getAccounts((sqlRes) => {
+    res.send(sqlRes);
+  })
+});
+
 router.get('/getStudentAndAccount', function (req, res, next) {
   sqlInterface.getStudentAndAccount({ studentId: req.query.StudentID }, (sqlRes) => {
     res.send(sqlRes);
